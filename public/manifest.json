@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Hashicorp's Vault Extension (Unofficial)",
+  "version": "0.1.0",
+  "description": "This is a unofficial Hashicorp's Vault Chrome Extension.",
+  "permissions": [
+    "*"
+  ],
+  "icons": {
+    "16": "img/favicon-16x16.png",
+    "48": "img/favicon-48x48.png",
+    "128": "img/favicon-128x128.png"
+  },
+  "action": {
+    "default_popup": "index.html"
+  }
+}

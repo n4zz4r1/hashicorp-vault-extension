@@ -6,12 +6,13 @@
 
 <style>
 html,
-body {
-  width: 350px;
-  height: 600px;
-  min-width: 350px;
-  min-height: 600px;
-  max-width: 350px;
-  max-height: 600px;
+body,
+.v-overlay-scroll-blocked {
+  width: 350px !important;
+  height: 600px !important;
+  min-width: 350px !important;
+  min-height: 600px !important;
+  max-width: 350px !important;
+  max-height: 600px !important;
 }
 </style>

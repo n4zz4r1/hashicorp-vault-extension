@@ -2,20 +2,12 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/LoginView.vue'
 import LogoutView from '../views/LogoutView.vue'
-import SearchView from '../views/home/SearchView.vue'
 
 const routes = [
   {
     path: '/home',
     name: 'home',
     component: HomeView,
-    children: [
-      {
-        path: '/home/search',
-        name: 'search',
-        component: SearchView
-      }
-    ]
   },
   {
     path: '/login',
@@ -36,7 +28,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   const publicPages = ['/login', '/logout'];
-  const protectedPages = ['/home/search'];
+  const protectedPages = ['/home'];
   const authRequired = !publicPages.includes(to.path);
   const pathDoesntExist = !protectedPages.includes(to.path) && !publicPages.includes(to.path);
   const loggedIn = localStorage.getItem('client_token');
@@ -44,7 +36,7 @@ router.beforeEach((to, from, next) => {
   if (authRequired && !loggedIn) {
     next('/login');
   } else if (pathDoesntExist) {
-    next('/home/search');
+    next('/home');
   } else {
     next();
   }
